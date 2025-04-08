@@ -13,22 +13,22 @@
   --card: #ffffff;
   --card-foreground: #1a1a1a;
 
-  --primary: #5c7aea;
+  --primary: #f97316; /* orange-500 */
   --primary-foreground: #ffffff;
 
-  --secondary: #a0b4ff;
+  --secondary: #fdba74; /* orange-300 */
   --secondary-foreground: #1a1a1a;
 
   --muted: #f3f4f6;
   --muted-foreground: #4b5563;
 
-  --accent: #e7ebff;
+  --accent: #ffeede; /* soft orange-tint */
   --accent-foreground: #1a1a1a;
 
   --destructive: #ef4444;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #5c7aea;
+  --ring: #f97316;
 }
 
 @theme inline {
@@ -69,7 +69,6 @@
   }
 }
 
-/* Set the base font and background */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -81,18 +80,23 @@ body {
   --foreground: #f3f4f6;
   --card: #2a2a2a;
   --card-foreground: #f3f4f6;
-  --primary: #5c7aea;
+
+  --primary: #ea580c; /* orange-600 */
   --primary-foreground: #ffffff;
-  --secondary: #3b4dbf;
-  --secondary-foreground: #ffffff;
+
+  --secondary: #fb923c; /* orange-400 */
+  --secondary-foreground: #1a1a1a;
+
   --muted: #374151;
   --muted-foreground: #9ca3af;
-  --accent: #4f46e5;
-  --accent-foreground: #e0e7ff;
+
+  --accent: #fdba74; /* lighter orange */
+  --accent-foreground: #1a1a1a;
+
   --destructive: #dc2626;
   --border: #374151;
   --input: #4b5563;
-  --ring: #6366f1;
+  --ring: #f97316;
 }
 
 @layer base {
