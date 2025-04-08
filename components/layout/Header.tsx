@@ -15,10 +15,11 @@ import { useState } from "react";
 const menuItems = [
   { title: "Home", href: "/" },
   { title: "Brands", href: "/brands" },
-  { title: "Shop", href: "/shop" },
-  { title: "About", href: "/about" },
-  { title: "Learn", href: "/learn" },
-  { title: "Contact", href: "/contact" },
+  {
+    title: "Shop",
+    href: "https://shop.kitesurfingcyprus.org/",
+    external: true,
+  },
 ];
 
 export function Header() {
@@ -36,11 +37,22 @@ export function Header() {
             <NavigationMenuList>
               {menuItems.map((item) => (
                 <NavigationMenuItem key={item.title}>
-                  <Link href={item.href} legacyBehavior passHref>
-                    <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-gray-800 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-gray-800 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       {item.title}
-                    </NavigationMenuLink>
-                  </Link>
+                    </a>
+                  ) : (
+                    <Link href={item.href} legacyBehavior passHref>
+                      <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-gray-800 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                        {item.title}
+                      </NavigationMenuLink>
+                    </Link>
+                  )}
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
@@ -54,10 +66,14 @@ export function Header() {
             asChild
             className="hidden md:flex"
           >
-            <Link href="/shop">
+            <a
+              href="https://shop.kitesurfingcyprus.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <ShoppingBag className="h-4 w-4" />
               <span className="sr-only">Shopping bag</span>
-            </Link>
+            </a>
           </Button>
 
           <Button
@@ -89,24 +105,39 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="fixed inset-0 top-16 z-50 flex flex-col bg-background p-6 md:hidden">
           <nav className="flex flex-col space-y-6">
-            {menuItems.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className="text-lg font-medium text-gray-800 hover:text-primary"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.title}
-              </Link>
-            ))}
-            <Link
-              href="/shop"
+            {menuItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  className="text-lg font-medium text-gray-800 hover:text-primary"
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.title}
+                </a>
+              ) : (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="text-lg font-medium text-gray-800 hover:text-primary"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.title}
+                </Link>
+              )
+            )}
+            <a
+              href="https://shop.kitesurfingcyprus.org/"
               className="flex items-center gap-2 text-lg font-medium text-gray-800 hover:text-primary"
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setMobileMenuOpen(false)}
             >
               <ShoppingBag className="h-5 w-5" />
               Shop
-            </Link>
+            </a>
           </nav>
           <div className="mt-auto">
             <Button className="w-full" size="lg" asChild>

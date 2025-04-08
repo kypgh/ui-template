@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="bg-muted/40 w-full py-12">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div className="flex flex-col space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <span className="text-primary font-bold text-xl">KITEFLEX</span>
@@ -18,14 +18,18 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://facebook.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.facebook.com/griffeskiteflex"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Facebook className="h-5 w-5" />
                   <span className="sr-only">Facebook</span>
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/kiteflex?utm_source=qr"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -62,73 +66,21 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/shop"
+                <a
+                  href="https://shop.kitesurfingcyprus.org/"
                   className="text-muted-foreground hover:text-foreground transition-colors"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   Shop
-                </Link>
+                </a>
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/contact"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/learn"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Learn to Kite
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-lg font-medium">Top Brands</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/brands/duotone"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Duotone
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/brands/flysurfer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Flysurfer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/brands/core"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Core
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/brands/ocean-rodeo"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Ocean Rodeo
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/brands"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  View All
+                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -140,10 +92,6 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-muted-foreground">Limassol, Cyprus</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-muted-foreground">+357 123 456 789</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
@@ -159,26 +107,6 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Kiteflex. All rights reserved.
           </p>
-          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-            <Link
-              href="/privacy"
-              className="hover:text-foreground transition-colors"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="hover:text-foreground transition-colors"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              href="/cookies"
-              className="hover:text-foreground transition-colors"
-            >
-              Cookie Policy
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
