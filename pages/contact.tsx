@@ -120,7 +120,7 @@ export default function ContactPage() {
                     </Button>
                     <Button variant="outline" asChild>
                       <a
-                        href="https://www.instagram.com/kiteflex?utm_source=qr"
+                        href="https://www.instagram.com/kiteflex/"
                         target="_blank"
                         rel="noreferrer"
                       >

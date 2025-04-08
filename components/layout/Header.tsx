@@ -11,10 +11,12 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const menuItems = [
   { title: "Home", href: "/" },
   { title: "Brands", href: "/brands" },
+  { title: "Gallery", href: "/gallery" },
   {
     title: "Shop",
     href: "https://shop.kitesurfingcyprus.org/",
@@ -40,7 +42,7 @@ export function Header() {
                   {item.external ? (
                     <a
                       href={item.href}
-                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-gray-800 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -48,7 +50,7 @@ export function Header() {
                     </a>
                   ) : (
                     <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-gray-800 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                      <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                         {item.title}
                       </NavigationMenuLink>
                     </Link>
@@ -60,6 +62,9 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-4">
+          {/* Theme Toggle Button */}
+          <ThemeToggle />
+
           <Button
             variant="outline"
             size="icon"
@@ -110,7 +115,7 @@ export function Header() {
                 <a
                   key={item.title}
                   href={item.href}
-                  className="text-lg font-medium text-gray-800 dark:text-gray-200 hover:text-primary"
+                  className="text-lg font-medium text-foreground hover:text-primary"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
@@ -121,7 +126,7 @@ export function Header() {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="text-lg font-medium text-gray-800 dark:text-gray-200 hover:text-primary"
+                  className="text-lg font-medium text-foreground hover:text-primary"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.title}
@@ -130,7 +135,7 @@ export function Header() {
             )}
             <a
               href="https://shop.kitesurfingcyprus.org/"
-              className="flex items-center gap-2 text-lg font-medium text-gray-800 dark:text-gray-200 hover:text-primary"
+              className="flex items-center gap-2 text-lg font-medium text-foreground hover:text-primary"
               target="_blank"
               rel="noreferrer"
               onClick={() => setMobileMenuOpen(false)}
@@ -138,6 +143,13 @@ export function Header() {
               <ShoppingBag className="h-5 w-5" />
               Shop
             </a>
+            {/* Add theme toggle to mobile menu */}
+            <div className="flex items-center">
+              <span className="text-lg font-medium text-foreground mr-3">
+                Theme
+              </span>
+              <ThemeToggle />
+            </div>
           </nav>
           <div className="mt-auto p-6">
             <Button className="w-full" size="lg" asChild>

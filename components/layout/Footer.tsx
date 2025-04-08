@@ -29,7 +29,7 @@ export function Footer() {
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <a
-                  href="https://www.instagram.com/kiteflex?utm_source=qr"
+                  href="https://www.instagram.com/kiteflex/"
                   target="_blank"
                   rel="noreferrer"
                 >
