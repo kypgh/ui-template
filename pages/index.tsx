@@ -18,6 +18,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { Gallery } from "@/components/Gallery";
 
 export default function Home() {
   return (
@@ -87,9 +88,9 @@ export default function Home() {
         description="Experienced instructors leading the way in kitesurfing instruction in Cyprus."
       >
         <Container>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="flex justify-center">
             {/* Rony Card */}
-            <Card className="text-center">
+            <Card className="text-center max-w-md">
               <CardContent className="pt-6">
                 <div className="mb-4 mx-auto relative w-32 h-32 rounded-full overflow-hidden">
                   <div className="absolute inset-0 bg-[url('/team-rony.jpg')] bg-cover bg-center" />
@@ -105,24 +106,6 @@ export default function Home() {
                 </p>
               </CardContent>
             </Card>
-
-            {/* Erdogan Card */}
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <div className="mb-4 mx-auto relative w-32 h-32 rounded-full overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('/team-erdogan.jpg')] bg-cover bg-center" />
-                </div>
-                <h3 className="text-xl font-bold">Erdogan Kervanli</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Kiteflex and Duotone Cyprus Rider
-                </p>
-                <p className="text-sm">
-                  A Duotone team rider and expert instructor, Erdogan brings
-                  professional-level skills and a patient teaching approach to
-                  all his sessions.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </Container>
       </Section>
@@ -133,19 +116,18 @@ export default function Home() {
         description="Capture the excitement and joy of kitesurfing with Kiteflex."
       >
         <Container>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={i}
-                className="relative aspect-square overflow-hidden rounded-lg"
-              >
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform hover:scale-105"
-                  style={{ backgroundImage: `url('/gallery-${i + 1}.jpg')` }}
-                />
-              </div>
-            ))}
-          </div>
+          <Gallery
+            images={[
+              "/gallery/gallery-1.jpg",
+              "/gallery/gallery-2.jpg",
+              "/gallery/gallery-3.jpg",
+              "/gallery/gallery-4.jpg",
+              "/gallery/gallery-5.jpg",
+              "/gallery/gallery-6.jpg",
+              "/gallery/gallery-7.jpg",
+              "/gallery/gallery-8.jpg",
+            ]}
+          />
           <div className="mt-8 text-center">
             <Button variant="outline" asChild>
               <Link href="/gallery">

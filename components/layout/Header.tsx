@@ -103,14 +103,14 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-16 z-50 flex flex-col bg-background p-6 md:hidden">
-          <nav className="flex flex-col space-y-6">
+        <div className="fixed h-fit inset-0 top-16 z-50 flex flex-col bg-white dark:bg-gray-900 md:hidden">
+          <nav className="flex flex-col space-y-6 p-6">
             {menuItems.map((item) =>
               item.external ? (
                 <a
                   key={item.title}
                   href={item.href}
-                  className="text-lg font-medium text-gray-800 hover:text-primary"
+                  className="text-lg font-medium text-gray-800 dark:text-gray-200 hover:text-primary"
                   target="_blank"
                   rel="noreferrer"
                   onClick={() => setMobileMenuOpen(false)}
@@ -121,7 +121,7 @@ export function Header() {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="text-lg font-medium text-gray-800 hover:text-primary"
+                  className="text-lg font-medium text-gray-800 dark:text-gray-200 hover:text-primary"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.title}
@@ -130,7 +130,7 @@ export function Header() {
             )}
             <a
               href="https://shop.kitesurfingcyprus.org/"
-              className="flex items-center gap-2 text-lg font-medium text-gray-800 hover:text-primary"
+              className="flex items-center gap-2 text-lg font-medium text-gray-800 dark:text-gray-200 hover:text-primary"
               target="_blank"
               rel="noreferrer"
               onClick={() => setMobileMenuOpen(false)}
@@ -139,9 +139,11 @@ export function Header() {
               Shop
             </a>
           </nav>
-          <div className="mt-auto">
+          <div className="mt-auto p-6">
             <Button className="w-full" size="lg" asChild>
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                Contact Us
+              </Link>
             </Button>
           </div>
         </div>

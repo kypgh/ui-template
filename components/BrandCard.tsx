@@ -8,14 +8,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
-import Link from "next/link";
 
 interface BrandCardProps {
   name: string;
   category: string;
   description: string;
   logo?: string;
-  slug: string;
+  externalLink?: string;
 }
 
 export function BrandCard({
@@ -23,7 +22,7 @@ export function BrandCard({
   category,
   description,
   logo,
-  slug,
+  externalLink,
 }: BrandCardProps) {
   return (
     <Card className="flex h-full flex-col">
@@ -52,14 +51,16 @@ export function BrandCard({
             ? `${description.slice(0, 150)}...`
             : description}
         </p>
-        <div className="mt-4">
-          <Button variant="outline" size="sm" asChild className="w-full">
-            <Link href={`/brands/${slug}`}>
-              View Details
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
+        {externalLink && (
+          <div className="mt-4">
+            <Button variant="outline" size="sm" asChild className="w-full">
+              <a href={externalLink} target="_blank" rel="noopener noreferrer">
+                Visit Website
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+        )}
       </CardContent>
     </Card>
   );
