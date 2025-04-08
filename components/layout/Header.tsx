@@ -37,7 +37,7 @@ export function Header() {
               {menuItems.map((item) => (
                 <NavigationMenuItem key={item.title}>
                   <Link href={item.href} legacyBehavior passHref>
-                    <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                    <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-gray-800 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                       {item.title}
                     </NavigationMenuLink>
                   </Link>
@@ -93,7 +93,7 @@ export function Header() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="text-lg font-medium hover:text-primary"
+                className="text-lg font-medium text-gray-800 hover:text-primary"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.title}
@@ -101,7 +101,7 @@ export function Header() {
             ))}
             <Link
               href="/shop"
-              className="flex items-center gap-2 text-lg font-medium hover:text-primary"
+              className="flex items-center gap-2 text-lg font-medium text-gray-800 hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               <ShoppingBag className="h-5 w-5" />
