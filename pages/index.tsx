@@ -6,17 +6,7 @@ import { CookieConsent } from "@/components/layout/CookieConsent";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import {
-  Wind,
-  Users,
-  Award,
-  Instagram,
-  Facebook,
-  Mail,
-  MapPin,
-  ArrowRight,
-} from "lucide-react";
+import { Instagram, Facebook, Mail, MapPin, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Gallery } from "@/components/Gallery";
 
